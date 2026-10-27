@@ -1,0 +1,983 @@
+<!doctype html>
+<html lang="ckb" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#050814">
+<!--HEAD-START-->
+<title>Company Du Bra</title>
+<link rel="preconnect" href="https://foplvmfppbngywmxmqof.supabase.co" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700;800;900&family=Outfit:wght@700;800;900&display=swap" media="print" onload="this.media='all'">
+<style>
+/* Layout: phone-width column over a night-blue aurora — glowing gold DB emblem, glass card of Apple ID details, OTP box, support. Single dark look by design. */
+:root{
+  --bg:#050814; --card:rgba(14,20,40,.66); --solid:#0b1124; --line:rgba(255,255,255,.09); --ink:#f5f7ff; --muted:#94a0bf;
+  --blue:#5b93ff; --blue-dark:#2453d6; --blue-glow:rgba(91,147,255,.45); --blue-light:rgba(91,147,255,.13);
+  --gold:#f7c948; --gold2:#ffe7a3; --cyan:#22d3ee; --violet:#8b5cf6;
+  --ok:#10B981; --bad:#EF4444;
+  --f-ku:"Vazirmatn",Tahoma,sans-serif; --f-en:"Outfit","Vazirmatn",system-ui,sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html,body{margin:0;background:var(--bg);overflow-x:hidden;overflow-x:clip;max-width:100%}
+body{min-height:100vh;color:var(--ink);font-family:var(--f-ku);line-height:1.65;overflow-x:hidden}
+html[lang="en"] body{font-family:var(--f-en)}
+button{font:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+
+/* ambient background */
+.aurora{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+.aurora i{position:absolute;border-radius:50%;filter:blur(70px);animation:drift 20s ease-in-out infinite alternate}
+.aurora i:nth-child(1){width:60vmax;height:60vmax;background:#1d3fa8;top:-28vmax;right:-22vmax;opacity:.55}
+.aurora i:nth-child(2){width:46vmax;height:46vmax;background:#0e7490;bottom:-22vmax;left:-16vmax;opacity:.35;animation-duration:24s}
+.aurora i:nth-child(3){width:30vmax;height:30vmax;background:#6d28d9;top:38%;left:42%;opacity:.25;animation-duration:28s}
+@keyframes drift{to{transform:translate(-6vmax,5vmax) scale(1.15)}}
+#stars,#fx{position:fixed;inset:0;width:100%;height:100%;pointer-events:none}
+#stars{z-index:0}#fx{z-index:1500}
+
+.wrap{position:relative;z-index:1;max-width:440px;margin:0 auto;padding:max(16px,env(safe-area-inset-top)) 16px max(32px,env(safe-area-inset-bottom));display:grid;gap:16px}
+
+/* top bar */
+.top{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.brand{display:flex;align-items:center;gap:10px}
+.brand b{font-family:var(--f-en);font-weight:900;font-size:1.05rem;background:linear-gradient(90deg,var(--gold2),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+.brand small{display:block;font-family:var(--f-en);font-size:.62rem;letter-spacing:.24em;color:var(--muted);margin-top:-3px;direction:ltr;text-align:start}
+.lang{position:relative}
+.lang-btn{display:flex;align-items:center;gap:6px;font-family:var(--f-en);font-weight:700;font-size:.78rem;color:var(--ink);
+  background:var(--card);border:1px solid var(--line);border-radius:99px;padding:7px 12px;cursor:pointer;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.lang-btn svg{width:16px;height:16px;color:var(--gold)}
+.lang-menu{position:absolute;top:calc(100% + 8px);inset-inline-end:0;min-width:150px;background:var(--solid);border:1px solid var(--line);
+  border-radius:14px;box-shadow:0 14px 30px rgba(0,0,0,.6);padding:6px;display:grid;gap:2px;z-index:10}
+.lang-menu button{font-size:.9rem;text-align:start;background:none;border:0;color:var(--ink);padding:10px 12px;border-radius:10px;cursor:pointer;display:flex;justify-content:space-between;gap:12px}
+.lang-menu button:hover{background:var(--blue-light);color:var(--gold2)}
+.lang-menu button[aria-checked="true"]{color:var(--gold);font-weight:800}
+
+/* hero emblem */
+.hero{position:relative;overflow-x:clip;text-align:center;display:grid;justify-items:center;gap:8px;padding:10px 0 4px}
+.emblem{position:relative;width:min(58vw,220px);aspect-ratio:1;display:grid;place-items:center;animation:intro 1s cubic-bezier(.2,.9,.2,1) both}
+@keyframes intro{from{transform:scale(.55);opacity:0;filter:blur(12px)}to{transform:none;opacity:1;filter:none}}
+.rays{position:absolute;inset:-36%;border-radius:50%;pointer-events:none;
+  background:repeating-conic-gradient(from 0deg,rgba(247,201,72,.14) 0deg 5deg,transparent 5deg 15deg);
+  -webkit-mask:radial-gradient(circle,#000 18%,transparent 66%);mask:radial-gradient(circle,#000 18%,transparent 66%);animation:spin 45s linear infinite}
+.glow{position:absolute;inset:12%;border-radius:50%;background:radial-gradient(circle,rgba(91,147,255,.55),rgba(247,201,72,.2) 55%,transparent 72%);filter:blur(18px);animation:breathe 3s ease-in-out infinite}
+@keyframes breathe{50%{transform:scale(1.12);opacity:.7}}
+.halo{position:absolute;inset:0;border-radius:50%;background:conic-gradient(from 0deg,var(--gold),var(--cyan),var(--blue),var(--violet),var(--gold));
+  -webkit-mask:radial-gradient(farthest-side,transparent calc(100% - 4px),#000 calc(100% - 3px));mask:radial-gradient(farthest-side,transparent calc(100% - 4px),#000 calc(100% - 3px));
+  animation:spin 6s linear infinite;filter:drop-shadow(0 0 10px rgba(91,147,255,.7))}
+.halo.h2{inset:7%;opacity:.4;animation-duration:12s;animation-direction:reverse;
+  -webkit-mask:radial-gradient(farthest-side,transparent calc(100% - 2px),#000 calc(100% - 1px));mask:radial-gradient(farthest-side,transparent calc(100% - 2px),#000 calc(100% - 1px))}
+@keyframes spin{to{transform:rotate(1turn)}}
+.orbit{position:absolute;inset:-5%;border-radius:50%;animation:spin 8s linear infinite;pointer-events:none}
+.orbit i{position:absolute;width:8px;height:8px;border-radius:50%;background:var(--gold2);box-shadow:0 0 12px 3px rgba(247,201,72,.85)}
+.orbit i:nth-child(1){top:0;left:50%}
+.orbit i:nth-child(2){bottom:8%;left:9%;width:6px;height:6px;background:var(--cyan);box-shadow:0 0 12px 3px rgba(34,211,238,.85)}
+.orbit i:nth-child(3){top:42%;right:-1%;width:5px;height:5px;background:#a5b4fc;box-shadow:0 0 12px 3px rgba(165,180,252,.85)}
+.spark{position:absolute;width:10px;height:10px;pointer-events:none;animation:twinkle 2.4s ease-in-out infinite}
+.spark::before{content:"";position:absolute;inset:0;background:var(--gold2);clip-path:polygon(50% 0,60% 40%,100% 50%,60% 60%,50% 100%,40% 60%,0 50%,40% 40%)}
+.spark.s1{top:4%;right:12%}.spark.s2{bottom:10%;left:6%;width:14px;height:14px;animation-delay:.8s}.spark.s3{top:28%;left:0;width:7px;height:7px;animation-delay:1.5s}.spark.s4{bottom:2%;right:20%;width:8px;height:8px;animation-delay:.4s}
+@keyframes twinkle{0%,100%{transform:scale(.3) rotate(0);opacity:.2}50%{transform:scale(1) rotate(45deg);opacity:1}}
+.logo-box{position:relative;width:76%;aspect-ratio:1;border-radius:50%;display:grid;place-items:center;
+  box-shadow:0 0 0 2px rgba(247,201,72,.55),0 18px 40px -14px rgba(0,0,0,.9),0 0 40px rgba(91,147,255,.35);animation:float 4.5s ease-in-out infinite;overflow:hidden}
+.logo-box::after{content:"";position:absolute;inset:-40%;background:linear-gradient(115deg,transparent 42%,rgba(255,255,255,.32) 50%,transparent 58%);transform:translateX(-70%);animation:gleam 3.6s ease-in-out 1.2s infinite;pointer-events:none}
+@keyframes float{50%{transform:translateY(-6px)}}
+@keyframes gleam{0%{transform:translateX(-70%)}45%,100%{transform:translateX(70%)}}
+.logo-box svg,.modal-logo svg{display:block;width:100%;height:100%}
+.hero h1{margin:6px 0 0;font-family:var(--f-en);font-size:1.6rem;font-weight:900;letter-spacing:.06em;line-height:1.2;direction:ltr;
+  background:linear-gradient(90deg,#fff 0%,var(--gold2) 25%,var(--gold) 50%,var(--gold2) 75%,#fff 100%);background-size:200% 100%;
+  -webkit-background-clip:text;background-clip:text;color:transparent;animation:shimmer 4s linear infinite;filter:drop-shadow(0 4px 18px rgba(247,201,72,.3))}
+@keyframes shimmer{to{background-position:-200% 0}}
+.hero .sub-title{font-family:var(--f-en);font-size:.72rem;font-weight:700;color:var(--muted);letter-spacing:.32em;margin-top:-4px;direction:ltr;padding-left:.32em}
+.hero .apple-id-tag{display:inline-flex;align-items:center;gap:6px;font-family:var(--f-en);font-weight:800;font-size:.75rem;color:var(--gold2);
+  background:linear-gradient(135deg,rgba(247,201,72,.16),rgba(91,147,255,.14));border:1px solid rgba(247,201,72,.35);padding:5px 16px;border-radius:99px;margin-top:4px}
+.hero-foot{display:flex;justify-content:center;align-items:center}
+.stamp{font-family:var(--f-en);font-size:.72rem;color:var(--muted);direction:ltr}
+
+/* modals */
+.lang-modal-overlay,.modal-overlay{position:fixed;inset:0;background:rgba(3,6,16,.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);display:grid;place-items:center;padding:20px;animation:fadeIn .25s ease}
+.lang-modal-overlay{z-index:1000}.modal-overlay{z-index:999}
+.lang-select-card,.modal-card{position:relative;isolation:isolate;background:linear-gradient(160deg,#111a36,#0a0f22);border-radius:26px;padding:26px 20px 22px;width:100%;text-align:center;
+  box-shadow:0 30px 60px rgba(0,0,0,.7);display:grid;gap:16px;animation:scaleUp .3s cubic-bezier(.2,.9,.2,1)}
+.lang-select-card{max-width:360px}.modal-card{max-width:380px;gap:14px}
+.lang-select-card::before,.modal-card::before,.sheet::before{content:"";position:absolute;inset:-1px;border-radius:inherit;padding:1.5px;z-index:-1;
+  background:linear-gradient(120deg,var(--gold),var(--cyan),var(--blue),var(--violet),var(--gold));background-size:300% 300%;animation:flow 6s linear infinite;
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
+@keyframes flow{to{background-position:300% 0}}
+.lang-select-card .logo-box{width:120px;margin:0 auto}
+.lang-select-title{font-weight:900;font-size:1.1rem;margin:0;color:var(--ink)}
+.lang-options{display:grid;gap:10px}
+.lang-option-btn{background:rgba(255,255,255,.04);border:1px solid var(--line);color:var(--ink);padding:13px;border-radius:14px;font-weight:800;font-size:.95rem;cursor:pointer;transition:all .2s}
+.lang-option-btn:hover{background:linear-gradient(135deg,rgba(247,201,72,.18),rgba(91,147,255,.18));border-color:rgba(247,201,72,.5);color:var(--gold2);transform:translateY(-1px)}
+.modal-logo{width:84px;height:84px;border-radius:50%;margin:0 auto;overflow:hidden;box-shadow:0 0 0 2px rgba(247,201,72,.5),0 0 26px rgba(91,147,255,.5)}
+.modal-title{color:#ff8a8a;font-weight:900;font-size:1.05rem;display:flex;align-items:center;justify-content:center;gap:6px;margin:0}
+.modal-text{font-size:.88rem;color:var(--ink);line-height:1.75;text-align:right;background:rgba(239,68,68,.07);border:1px solid rgba(239,68,68,.22);border-radius:14px;padding:12px 14px}
+html[dir="ltr"] .modal-text{text-align:left}
+.modal-btn{background:linear-gradient(135deg,var(--gold2),var(--gold) 45%,#d39314);color:#1d1503;border:0;padding:13px;border-radius:14px;font-weight:900;font-size:.95rem;cursor:pointer;box-shadow:0 12px 26px -12px rgba(247,201,72,.9);position:relative;overflow:hidden}
+.modal-btn::after{content:"";position:absolute;top:0;bottom:0;width:40%;left:-60%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.6),transparent);animation:sweep 3s ease-in-out 1s infinite}
+@keyframes sweep{0%{left:-60%}40%,100%{left:130%}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes scaleUp{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
+
+/* details card */
+.sheet{position:relative;isolation:isolate;background:var(--card);border-radius:24px;padding:18px 14px;display:grid;gap:14px;
+  backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);box-shadow:0 20px 40px -20px rgba(0,0,0,.8)}
+.sheet-h{display:flex;align-items:center;justify-content:space-between;font-weight:900;font-size:1rem;padding-inline:4px}
+.sheet-h b{background:linear-gradient(90deg,#fff,var(--gold2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.sheet-h span{font-family:var(--f-en);font-size:.66rem;font-weight:700;letter-spacing:.2em;color:var(--muted)}
+.credentials-container{display:grid;gap:10px}
+.credential-card{background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:16px;padding:12px;display:flex;align-items:center;justify-content:space-between;gap:10px;
+  transition:border-color .2s,background .2s;animation:rise .55s cubic-bezier(.2,.9,.2,1) both}
+.credential-card:nth-child(2){animation-delay:.1s}
+@keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.credential-card:hover{border-color:rgba(247,201,72,.35);background:rgba(255,255,255,.07)}
+.c-ico{width:40px;height:40px;border-radius:12px;flex:none;display:grid;place-items:center}
+.c-ico svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2.1;stroke-linecap:round;stroke-linejoin:round}
+.c-ico.mail{background:linear-gradient(135deg,#bfdbfe,var(--blue));color:#071a44}
+.c-ico.key{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#1a1204}
+.credential-info{display:grid;min-width:0;width:100%}
+.credential-label{font-size:.72rem;font-weight:700;color:var(--muted);margin-bottom:1px}
+.credential-value{margin:0;font-family:var(--f-en);font-size:1.02rem;font-weight:700;color:var(--ink);direction:ltr;text-align:start;overflow-wrap:anywhere}
+.copy{font-size:.74rem;font-weight:800;border:0;color:#fff;background:linear-gradient(135deg,var(--blue),var(--blue-dark));border-radius:11px;padding:9px 14px;cursor:pointer;transition:transform .15s,box-shadow .2s;flex:none;
+  box-shadow:0 8px 18px -10px var(--blue-glow)}
+.copy:hover{box-shadow:0 10px 22px -8px var(--blue-glow)}
+.copy:active{transform:scale(.94)}
+.copy.done{background:linear-gradient(135deg,#34d399,var(--ok))}
+
+/* loading skeleton */
+.skel{display:grid;gap:10px}
+.skel div{height:64px;border-radius:16px;background:linear-gradient(90deg,rgba(255,255,255,.04) 0%,rgba(255,255,255,.1) 50%,rgba(255,255,255,.04) 100%);background-size:200% 100%;animation:sk 1.2s linear infinite}
+@keyframes sk{to{background-position:-200% 0}}
+
+/* OTP */
+.otp-box{position:relative;background:linear-gradient(160deg,rgba(16,185,129,.12),rgba(16,185,129,.03));border:1px solid rgba(16,185,129,.32);border-radius:18px;padding:14px;display:grid;gap:10px;animation:rise .55s cubic-bezier(.2,.9,.2,1) .2s both}
+.otp-header{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.otp-title{font-size:.8rem;font-weight:800;color:#34d399;display:flex;align-items:center;gap:6px}
+.otp-actions{display:flex;align-items:center;gap:8px}
+.update-btn{font-size:.72rem;font-weight:800;border:1px solid rgba(16,185,129,.45);color:#34d399;background:rgba(16,185,129,.12);border-radius:10px;padding:7px 12px;cursor:pointer;display:inline-flex;align-items:center;gap:5px;transition:all .2s}
+.update-btn:hover{background:#10b981;color:#fff}
+.update-btn svg{width:13px;height:13px;transition:transform .5s}
+.update-btn.spinning svg{transform:rotate(360deg)}
+.otp-row{display:flex;align-items:center;justify-content:space-between;gap:10px;background:rgba(3,10,8,.55);border:1px dashed rgba(16,185,129,.4);border-radius:14px;padding:12px 14px}
+.otp-val{font-family:var(--f-en);font-size:1.7rem;font-weight:900;color:#6ee7b7;letter-spacing:.18em;direction:ltr;text-shadow:0 0 18px rgba(16,185,129,.7)}
+.otp-empty{font-size:.82rem;color:var(--muted);font-weight:700;text-align:center;padding:6px;width:100%}
+
+/* extra */
+.extra-box{background:rgba(91,147,255,.08);border:1px solid rgba(91,147,255,.25);border-radius:18px;padding:14px;display:grid;gap:10px;animation:rise .55s cubic-bezier(.2,.9,.2,1) .3s both}
+.extra-title{font-size:.76rem;font-weight:800;color:#a5c4ff;letter-spacing:.04em}
+.extra-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.extra-item{background:rgba(5,8,20,.55);border:1px solid var(--line);border-radius:12px;padding:10px 12px;min-width:0}
+.extra-label{font-size:.66rem;font-weight:700;color:var(--muted)}
+.extra-val{font-family:var(--f-en);font-size:.95rem;font-weight:800;color:var(--ink);direction:ltr;text-align:start;overflow-wrap:anywhere}
+
+/* support */
+.support-section{position:relative;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:14px;display:grid;gap:12px;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+.support-btn-main{width:100%;padding:14px;border-radius:16px;border:1px solid rgba(91,147,255,.4);background:linear-gradient(135deg,rgba(91,147,255,.16),rgba(139,92,246,.18));color:#cfe0ff;font-weight:800;cursor:pointer;font-size:.95rem;display:flex;align-items:center;justify-content:center;gap:8px;transition:all .2s}
+.support-btn-main:hover{background:linear-gradient(135deg,var(--blue),var(--violet));color:#fff}
+.support-options{display:grid;gap:8px;animation:fadeIn .2s ease}
+.support-option-btn{width:100%;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:rgba(255,255,255,.04);color:var(--ink);font-weight:700;font-size:.88rem;cursor:pointer;text-align:start;display:flex;align-items:center;justify-content:space-between;transition:all .2s}
+.support-option-btn:hover{background:var(--blue-light);border-color:var(--blue);color:#cfe0ff}
+.support-option-btn svg{width:16px;height:16px;color:var(--muted);flex:none}
+html[dir="rtl"] .support-option-btn svg{transform:scaleX(-1)}
+.support-msg{margin:0;text-align:center;font-weight:700;font-size:.85rem}
+.support-custom-box{display:grid;gap:8px;margin-top:6px}
+.support-textarea{width:100%;background:rgba(5,8,20,.6);border:1px solid var(--line);border-radius:12px;color:var(--ink);padding:10px 12px;font:inherit;font-size:.85rem;resize:vertical;min-height:75px}
+.support-textarea:focus{border-color:var(--blue);outline:none}
+.support-send-btn{background:linear-gradient(135deg,var(--blue),var(--blue-dark));color:#fff;border:0;border-radius:11px;padding:11px;font-weight:800;font-size:.85rem;cursor:pointer}
+
+.foot{text-align:center;font-size:.75rem;color:var(--muted);display:grid;gap:2px;margin-top:4px}
+.foot b{color:var(--gold2)}
+.err{background:rgba(239,68,68,.1);color:#fca5a5;border:1px solid rgba(239,68,68,.3);font-weight:700;padding:16px;border-radius:14px;text-align:center;font-size:.92rem}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.01s!important;animation-delay:0s!important;animation-iteration-count:1!important;transition:none!important}}
+
+/* ===== v3: OTP digits, guide, promo, WhatsApp ===== */
+.otp-timer{position:relative;width:34px;height:34px;flex:none;display:grid;place-items:center}
+.otp-timer svg{position:absolute;inset:0;transform:rotate(-90deg)}
+.otp-timer circle{fill:none;stroke-width:3}
+.otp-timer .bgc{stroke:rgba(16,185,129,.18)}
+.otp-timer .pc{stroke:#34d399;stroke-linecap:round;stroke-dasharray:94.2;stroke-dashoffset:calc(94.2 * (1 - var(--p,1)));transition:stroke-dashoffset 1s linear}
+.otp-timer b{font-family:var(--f-en);font-size:.68rem;color:#6ee7b7}
+.otp-digits{display:flex;gap:5px;direction:ltr;flex:1;justify-content:center;flex-wrap:nowrap;min-width:0}
+.otp-digits span{width:30px;height:42px;flex:none;border-radius:9px;display:grid;place-items:center;font-family:var(--f-en);font-weight:900;font-size:1.3rem;color:#d1fae5;
+  background:linear-gradient(180deg,rgba(16,185,129,.28),rgba(6,40,30,.85));border:1px solid rgba(52,211,153,.5);box-shadow:0 6px 16px -8px rgba(16,185,129,.9),inset 0 1px 0 rgba(255,255,255,.15);
+  text-shadow:0 0 12px rgba(52,211,153,.9);animation:flipIn .55s cubic-bezier(.2,1.4,.4,1) both;animation-delay:calc(var(--i) * 70ms)}
+@keyframes flipIn{from{transform:rotateX(90deg) translateY(-8px);opacity:0}to{transform:none;opacity:1}}
+.otp-row.got{animation:gotGlow 1.2s ease}
+@keyframes gotGlow{30%{box-shadow:0 0 0 3px rgba(52,211,153,.6),0 0 30px rgba(16,185,129,.7)}}
+.otp-search{display:flex;align-items:center;justify-content:center;gap:6px;width:100%;color:#6ee7b7;font-weight:700;font-size:.85rem;padding:6px}
+.otp-search i{width:8px;height:8px;border-radius:50%;background:#34d399;animation:bounce 1s ease-in-out infinite}
+.otp-search i:nth-child(2){animation-delay:.15s}.otp-search i:nth-child(3){animation-delay:.3s}
+.otp-search span{margin-inline-start:6px}
+@keyframes bounce{40%{transform:translateY(-7px);opacity:1}0%,80%,100%{transform:none;opacity:.4}}
+
+.guide{position:relative;background:var(--card);border:1px solid var(--line);border-radius:24px;padding:16px 14px;margin-bottom:16px;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+.guide-h{display:flex;justify-content:space-between;align-items:center;padding-inline:4px;margin-bottom:12px}
+.guide-h b{font-weight:900;background:linear-gradient(90deg,#fff,var(--gold2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.guide-h span{direction:ltr;font-family:var(--f-en);font-size:.66rem;font-weight:700;letter-spacing:.2em;color:var(--muted)}
+.g-track{display:grid;grid-auto-flow:column;grid-auto-columns:100%;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+.g-track::-webkit-scrollbar{display:none}
+.g-card{scroll-snap-align:center;display:flex;gap:14px;align-items:center;background:rgba(255,255,255,.035);border:1px solid var(--line);border-radius:18px;padding:14px;min-width:0}
+.g-txt{min-width:0;display:grid;gap:4px}
+.g-txt em{font-style:normal;font-family:var(--f-en);font-weight:900;font-size:.75rem;width:26px;height:26px;border-radius:8px;display:grid;place-items:center;background:linear-gradient(135deg,var(--gold2),var(--gold));color:#1a1204}
+.g-txt b{font-size:1rem}
+.g-txt p{margin:0;font-size:.82rem;color:var(--muted);line-height:1.6}
+.g-dots{display:flex;justify-content:center;gap:6px;margin-top:10px}
+.g-dots i{width:7px;height:7px;border-radius:99px;background:rgba(255,255,255,.2);transition:all .3s}
+.g-dots i.on{width:20px;background:var(--gold)}
+/* phone mockups */
+.phone{position:relative;flex:none;width:92px;height:168px;border-radius:18px;background:#0b0f1d;border:3px solid #2b3350;box-shadow:0 12px 26px -10px rgba(0,0,0,.9),inset 0 0 0 1px rgba(255,255,255,.05);overflow:hidden;direction:ltr}
+.phone::before{content:"";position:absolute;top:5px;left:50%;transform:translateX(-50%);width:28px;height:7px;border-radius:5px;background:#000;z-index:3}
+.scr{position:absolute;inset:0;padding:18px 7px 7px}
+.p1 .scr{background:linear-gradient(160deg,#3b2b7a,#122a5c)}
+.apps{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:6px}
+.apps i{aspect-ratio:1;border-radius:7px;background:rgba(255,255,255,.18)}
+.apps i.as{background:linear-gradient(180deg,#38bdf8,#2563eb);display:grid;place-items:center;box-shadow:0 0 0 2px #fff,0 0 14px rgba(56,189,248,.9);animation:hl 1.6s ease-in-out infinite}
+.apps i.as::after{content:"A";color:#fff;font:900 13px var(--f-en)}
+@keyframes hl{50%{transform:scale(1.12)}}
+.tap{position:absolute;width:22px;height:22px;border-radius:50%;border:2px solid #fff;opacity:0;animation:tap 1.6s ease-out infinite;z-index:2;pointer-events:none}
+@keyframes tap{0%{transform:scale(.3);opacity:.9}70%,100%{transform:scale(1.6);opacity:0}}
+.p2 .scr,.p3 .scr{background:#f4f5f8}
+.as-top{display:flex;justify-content:space-between;align-items:center}
+.as-top b{font:900 11px var(--f-en);color:#111}
+.av{width:16px;height:16px;border-radius:50%;background:linear-gradient(135deg,#a5b4fc,#6366f1);box-shadow:0 0 0 2px #2563eb;animation:hl 1.6s ease-in-out infinite}
+.as-card{height:38px;border-radius:7px;margin-top:7px;background:linear-gradient(135deg,#fbcfe8,#c4b5fd)}
+.as-card.c2{background:linear-gradient(135deg,#bae6fd,#a7f3d0);height:30px}
+.as-card.c3{background:#e5e7eb;height:18px}
+.p3 .scr{display:flex;flex-direction:column;align-items:center;gap:6px;padding-top:24px}
+.ap{width:18px;height:18px;border-radius:50%;background:#111}
+.p3 .ttl{font:800 8px var(--f-en);color:#111}
+.inp{width:100%;height:16px;border-radius:5px;background:#fff;border:1px solid #d1d5db;display:flex;align-items:center;padding-inline:4px;gap:2px}
+.inp i{width:3px;height:3px;border-radius:50%;background:#374151;opacity:0;animation:typ 2.4s steps(1) infinite}
+.inp i:nth-child(2){animation-delay:.2s}.inp i:nth-child(3){animation-delay:.4s}.inp i:nth-child(4){animation-delay:.6s}.inp i:nth-child(5){animation-delay:.8s}.inp i:nth-child(6){animation-delay:1s}
+.inp.i2 i{animation-delay:1.2s}.inp.i2 i:nth-child(2){animation-delay:1.3s}.inp.i2 i:nth-child(3){animation-delay:1.4s}.inp.i2 i:nth-child(4){animation-delay:1.5s}
+@keyframes typ{0%{opacity:0}5%,90%{opacity:1}}
+.sbtn{width:100%;height:16px;border-radius:5px;background:#2563eb;margin-top:2px}
+
+
+.g-part{justify-self:start;font-size:.66rem;font-weight:800;border-radius:99px;padding:2px 9px}
+.g-part.a{background:rgba(56,189,248,.15);color:#7dd3fc}
+.g-part.b{background:rgba(52,211,153,.15);color:#6ee7b7}
+.g-dots i.b{background:rgba(52,211,153,.3)}
+.g-dots i.b.on{background:#34d399}
+.scr.web{background:#f4f5f8;display:flex;flex-direction:column;align-items:center;gap:6px;padding-top:16px}
+.url{width:100%;height:13px;border-radius:5px;background:#e5e7eb;color:#374151;font:700 5.5px var(--f-en);display:grid;place-items:center;margin-bottom:4px;white-space:nowrap;overflow:hidden}
+.mrow{width:100%;height:13px;border-radius:4px;background:#e5e7eb}
+.mrow.hl{background:#2563eb;color:#fff;font:800 5.5px var(--f-en);display:grid;place-items:center;box-shadow:0 0 0 2px #93c5fd;animation:hl 1.6s ease-in-out infinite}
+.mrow.sub{background:#dbeafe;color:#1e3a8a;font:800 5.5px var(--f-en);display:grid;place-items:center;width:86%}
+.num{direction:ltr;unicode-bidi:isolate;width:100%;height:18px;border-radius:5px;background:#fff;border:1px solid #e5e7eb;display:flex;align-items:center;gap:4px;padding-inline:4px;font:700 6px var(--f-en);color:#111}
+.num i{font-style:normal;width:10px;height:10px;border-radius:50%;display:grid;place-items:center;color:#fff;font-size:8px;line-height:1}
+.num.old{opacity:.6;text-decoration:line-through}
+.num.old i{background:#ef4444}
+.num.new{border-color:#22c55e;box-shadow:0 0 0 2px rgba(34,197,94,.35);animation:hl 1.6s ease-in-out infinite}
+.num.new i{background:#22c55e}
+.sms{display:flex;gap:3px;margin-top:4px}
+.sms b{width:9px;height:12px;border-radius:3px;background:#fff;border:1px solid #d1d5db;animation:typ 2.4s steps(1) infinite}
+.sms b:nth-child(2){animation-delay:.2s}.sms b:nth-child(3){animation-delay:.4s}.sms b:nth-child(4){animation-delay:.6s}.sms b:nth-child(5){animation-delay:.8s}.sms b:nth-child(6){animation-delay:1s}
+</style>
+<!--HEAD-END-->
+</head>
+<body>
+<!--BODY-START-->
+<div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+<canvas id="stars" aria-hidden="true"></canvas>
+
+  <!-- Modal بۆ هەڵبژاردنی زمان لە سەرەتادا -->
+  <div class="lang-modal-overlay" id="langSelectModal">
+    <div class="lang-select-card">
+      <div class="logo-box"><svg viewBox="0 0 500 500" role="img" aria-label="Company Du Bra">
+<defs>
+<linearGradient id="gda" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff4c8"/><stop offset=".42" stop-color="#f7c948"/><stop offset=".7" stop-color="#e2a52a"/><stop offset="1" stop-color="#a86a0a"/></linearGradient>
+<radialGradient id="bga" cx="50%" cy="36%" r="72%"><stop offset="0" stop-color="#1c2f66"/><stop offset=".6" stop-color="#0a1330"/><stop offset="1" stop-color="#040814"/></radialGradient>
+<radialGradient id="ina" cx="50%" cy="45%" r="55%"><stop offset="0" stop-color="#2a4ea8" stop-opacity=".55"/><stop offset="1" stop-color="#2a4ea8" stop-opacity="0"/></radialGradient>
+<filter id="gla" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<path id="tpa" d="M 80,250 A 170,170 0 1,1 420,250"/>
+<path id="bpa" d="M 410,250 A 160,160 0 0,1 90,250"/>
+</defs>
+<circle cx="250" cy="250" r="244" fill="url(#bga)"/>
+<circle cx="250" cy="250" r="236" fill="none" stroke="url(#gda)" stroke-width="12"/>
+<circle cx="250" cy="250" r="214" fill="none" stroke="url(#gda)" stroke-width="3" opacity=".85"/>
+<circle cx="250" cy="250" r="226" fill="none" stroke="#f7c948" stroke-width="1.5" stroke-dasharray="1 9" opacity=".7"/>
+<circle cx="250" cy="250" r="128" fill="url(#ina)"/>
+<circle cx="250" cy="250" r="128" fill="none" stroke="url(#gda)" stroke-width="3"/>
+<circle cx="250" cy="250" r="118" fill="none" stroke="#f7c948" stroke-width="1" stroke-dasharray="2 8" opacity=".6"/>
+<g fill="url(#gda)" font-family="Outfit, Arial, sans-serif" font-weight="800">
+<text font-size="30" letter-spacing="4"><textPath href="#tpa" startOffset="50%" text-anchor="middle">COMPANY DU BRA</textPath></text>
+<text font-size="27" letter-spacing="3.5"><textPath href="#bpa" startOffset="50%" text-anchor="middle">IRAQ KURDISTAN</textPath></text>
+</g>
+<g fill="url(#gda)"><path transform="translate(68,250) scale(1.25)" d="M0,-10 L2.4,-2.4 L10,0 L2.4,2.4 L0,10 L-2.4,2.4 L-10,0 L-2.4,-2.4 Z"/><path transform="translate(432,250) scale(1.25)" d="M0,-10 L2.4,-2.4 L10,0 L2.4,2.4 L0,10 L-2.4,2.4 L-10,0 L-2.4,-2.4 Z"/><path transform="translate(96,200) scale(0.6)" d="M0,-10 L2.4,-2.4 L10,0 L2.4,2.4 L0,10 L-2.4,2.4 L-10,0 L-2.4,-2.4 Z"/><path transform="translate(404,200) scale(0.6)" d="M0,-10 L2.4,-2.4 L10,0 L2.4,2.4 L0,10 L-2.4,2.4 L-10,0 L-2.4,-2.4 Z"/><path transform="translate(96,300) scale(0.6)" d="M0,-10 L2.4,-2.4 L10,0 L2.4,2.4 L0,10 L-2.4,2.4 L-10,0 L-2.4,-2.4 Z"/><path transform="translate(404,300) scale(0.6)" d="M0,-10 L2.4,-2.4 L10,0 L2.4,2.4 L0,10 L-2.4,2.4 L-10,0 L-2.4,-2.4 Z"/></g>
+<g fill="url(#gda)" filter="url(#gla)" transform="translate(196,132) scale(0.55)"><path d="M117.678,102.053 c-2.037,-16.906 11.458,-25.26 12.016,-25.618 c-6.55,-9.578 -16.745,-10.876 -20.316,-11.168 c-8.65,-0.902 -16.924,5.088 -21.309,5.088 c-4.404,0 -11.237,-4.96 -18.455,-4.832 c-9.489,0.178 -18.232,5.516 -23.102,14.004 c-9.873,17.135 -2.529,42.455 7.021,56.328 c4.814,6.974 10.556,14.777 18.093,14.492 c7.284,-0.292 10.038,-4.707 18.847,-4.707 c8.775,0 11.432,4.707 19.204,4.553 c7.872,-0.254 13.01,-7.433 17.794,-14.429 c5.636,-8.188 7.954,-16.108 8.083,-16.517 C118.411,103.58 117.678,102.053 117.678,102.053 Z"/><path d="M102.404,36.568 c4.116,-4.996 6.879,-11.944 6.126,-18.868 c-5.922,0.241 -13.084,3.948 -17.332,8.944 c-3.805,4.444 -7.139,11.536 -6.079,18.368 C91.076,45.344 98.118,41.42 102.404,36.568 Z"/></g>
+<text x="250" y="322" fill="url(#gda)" font-family="Outfit, Arial, sans-serif" font-weight="900" font-size="74" text-anchor="middle" letter-spacing="2" filter="url(#gla)">DB</text>
+</svg></div>
+      <h3 class="lang-select-title">تکایە زمانێک هەڵبژێرە<br><span style="font-size:0.8rem;color:var(--muted);font-weight:500">Please select your language</span></h3>
+      <div class="lang-options">
+        <button class="lang-option-btn" type="button" onclick="selectInitialLang('ku')">کوردی (Kurdish)</button>
+        <button class="lang-option-btn" type="button" onclick="selectInitialLang('ar')">العربية (Arabic)</button>
+        <button class="lang-option-btn" type="button" onclick="selectInitialLang('en')">English</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal هۆشداری Apple ID -->
+  <div class="modal-overlay" id="warningModal" style="display:none">
+    <div class="modal-card">
+      <div class="modal-logo"><svg viewBox="0 0 500 500" role="img" aria-label="Company Du Bra">
+<defs>
+<linearGradient id="gdb" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff4c8"/><stop offset=".42" stop-color="#f7c948"/><stop offset=".7" stop-color="#e2a52a"/><stop offset="1" stop-color="#a86a0a"/></linearGradient>
+<radialGradient id="bgb" cx="50%" cy="36%" r="72%"><stop offset="0" stop-color="#1c2f66"/><stop offset=".6" stop-color="#0a1330"/><stop offset="1" stop-color="#040814"/></radialGradient>
+<radialGradient id="inb" cx="50%" cy="45%" r="55%"><stop offset="0" stop-color="#2a4ea8" stop-opacity=".55"/><stop offset="1" stop-color="#2a4ea8" stop-opacity="0"/></radialGradient>
+<filter id="glb" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<path id="tpb" d="M 80,250 A 170,170 0 1,1 420,250"/>
+<path id="bpb" d="M 410,250 A 160,160 0 0,1 90,250"/>
+</defs>
+<circle cx="250" cy="250" r="244" fill="url(#bgb)"/>
+<circle cx="250" cy="250" r="236" fill="none" stroke="url(#gdb)" stroke-width="12"/>
+<circle cx="250" cy="250" r="214" fill="none" stroke="url(#gdb)" stroke-width="3" opacity=".85"/>
+<circle cx="250" cy="250" r="226" fill="none" stroke="#f7c948" stroke-width="1.5" stroke-dasharray="1 9" opacity=".7"/>
+<circle cx="250" cy="250" r="128" fill="url(#inb)"/>
+<circle cx="250" cy="250" r="128" fill="none" stroke="url(#gdb)" stroke-width="3"/>
+<circle cx="250" cy="250" r="118" fill="none" stroke="#f7c948" stroke-width="1" stroke-dasharray="2 8" opacity=".6"/>
+<g fill="url(#gdb)" font-family="Outfit, Arial, sans-serif" font-weight="800">
+<text font-size="30" letter-spacing="4"><textPath href="#tpb" startOffset="50%" text-anchor="middle">COMPANY DU BRA</textPath></text>
+<text font-size="27" letter-spacing="3.5"><textPath href="#bpb" startOffset="50%" text-anchor="middle">IRAQ KURDISTAN</textPath></text>
+</g>
+<g fill="url(#gdb)"><path transform="translate(68,250) scale(1.25)" d="M0,-10 L2.4,-2.4 L10,0 L2.4,2.4 L0,10 L-2.4,2.4 L-10,0 L-2.4,-2.4 Z"/><path transform="translate(432,250) scale(1.25)" d="M0,-10 L2.4,-2.4 L10,0 L2.4,2.4 L0,10 L-2.4,2.4 L-10,0 L-2.4,-2.4 Z"/><path transform="translate(96,200) scale(0.6)" d="M0,-10 L2.4,-2.4 L10,0 L2.4,2.4 L0,10 L-2.4,2.4 L-10,0 L-2.4,-2.4 Z"/><path transform="translate(404,200) scale(0.6)" d="M0,-10 L2.4,-2.4 L10,0 L2.4,2.4 L0,10 L-2.4,2.4 L-10,0 L-2.4,-2.4 Z"/><path transform="translate(96,300) scale(0.6)" d="M0,-10 L2.4,-2.4 L10,0 L2.4,2.4 L0,10 L-2.4,2.4 L-10,0 L-2.4,-2.4 Z"/><path transform="translate(404,300) scale(0.6)" d="M0,-10 L2.4,-2.4 L10,0 L2.4,2.4 L0,10 L-2.4,2.4 L-10,0 L-2.4,-2.4 Z"/></g>
+<g fill="url(#gdb)" filter="url(#glb)" transform="translate(196,132) scale(0.55)"><path d="M117.678,102.053 c-2.037,-16.906 11.458,-25.26 12.016,-25.618 c-6.55,-9.578 -16.745,-10.876 -20.316,-11.168 c-8.65,-0.902 -16.924,5.088 -21.309,5.088 c-4.404,0 -11.237,-4.96 -18.455,-4.832 c-9.489,0.178 -18.232,5.516 -23.102,14.004 c-9.873,17.135 -2.529,42.455 7.021,56.328 c4.814,6.974 10.556,14.777 18.093,14.492 c7.284,-0.292 10.038,-4.707 18.847,-4.707 c8.775,0 11.432,4.707 19.204,4.553 c7.872,-0.254 13.01,-7.433 17.794,-14.429 c5.636,-8.188 7.954,-16.108 8.083,-16.517 C118.411,103.58 117.678,102.053 117.678,102.053 Z"/><path d="M102.404,36.568 c4.116,-4.996 6.879,-11.944 6.126,-18.868 c-5.922,0.241 -13.084,3.948 -17.332,8.944 c-3.805,4.444 -7.139,11.536 -6.079,18.368 C91.076,45.344 98.118,41.42 102.404,36.568 Z"/></g>
+<text x="250" y="322" fill="url(#gdb)" font-family="Outfit, Arial, sans-serif" font-weight="900" font-size="74" text-anchor="middle" letter-spacing="2" filter="url(#glb)">DB</text>
+</svg></div>
+      <h3 class="modal-title" id="modalTitleText">⚠️ ئاگادارییەکی گرنگ</h3>
+      <div class="modal-text" id="modalDescText">
+        تکایە بەهیچ شێوەیەک ئەم Apple ID له Settings ی موبایلەکەت داخل مەکە! تەنها لە App Store داخل بکە.<br><br>
+        کاتی داخلکردنی، تکایە ڕاستەوخۆ بیخەرە سەر ژمارەی موبایلی خۆت.
+      </div>
+      <button class="modal-btn" id="closeModalBtn" type="button">تێگەیشتم، پیشاندانی زانیارییەکان</button>
+    </div>
+  </div>
+
+<div class="wrap">
+  <header class="top">
+    <div class="brand">
+      <div><b>Company Du Bra</b><small>DB STORE</small></div>
+    </div>
+    <div class="lang">
+      <button class="lang-btn" id="langBtn" type="button" aria-haspopup="menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.5 4 5.6 4 9s-1.4 6.5-4 9c-2.6-2.5-4-5.6-4-9s1.4-6.5 4-9z"/></svg>
+        <span id="langCode">KU</span>
+      </button>
+      <div class="lang-menu" id="langMenu" role="menu" hidden>
+        <button type="button" role="menuitemradio" data-lang="ku">کوردی</button>
+        <button type="button" role="menuitemradio" data-lang="ar">العربية</button>
+        <button type="button" role="menuitemradio" data-lang="en">English</button>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="emblem">
+      <div class="rays"></div><div class="glow"></div>
+      <div class="halo"></div><div class="halo h2"></div>
+      <div class="orbit"><i></i><i></i><i></i></div>
+      <div class="logo-box"><svg viewBox="0 0 500 500" role="img" aria-label="Company Du Bra">
+<defs>
+<linearGradient id="gdc" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff4c8"/><stop offset=".42" stop-color="#f7c948"/><stop offset=".7" stop-color="#e2a52a"/><stop offset="1" stop-color="#a86a0a"/></linearGradient>
+<radialGradient id="bgc" cx="50%" cy="36%" r="72%"><stop offset="0" stop-color="#1c2f66"/><stop offset=".6" stop-color="#0a1330"/><stop offset="1" stop-color="#040814"/></radialGradient>
+<radialGradient id="inc" cx="50%" cy="45%" r="55%"><stop offset="0" stop-color="#2a4ea8" stop-opacity=".55"/><stop offset="1" stop-color="#2a4ea8" stop-opacity="0"/></radialGradient>
+<filter id="glc" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<path id="tpc" d="M 80,250 A 170,170 0 1,1 420,250"/>
+<path id="bpc" d="M 410,250 A 160,160 0 0,1 90,250"/>
+</defs>
+<circle cx="250" cy="250" r="244" fill="url(#bgc)"/>
+<circle cx="250" cy="250" r="236" fill="none" stroke="url(#gdc)" stroke-width="12"/>
+<circle cx="250" cy="250" r="214" fill="none" stroke="url(#gdc)" stroke-width="3" opacity=".85"/>
+<circle cx="250" cy="250" r="226" fill="none" stroke="#f7c948" stroke-width="1.5" stroke-dasharray="1 9" opacity=".7"/>
+<circle cx="250" cy="250" r="128" fill="url(#inc)"/>
+<circle cx="250" cy="250" r="128" fill="none" stroke="url(#gdc)" stroke-width="3"/>
+<circle cx="250" cy="250" r="118" fill="none" stroke="#f7c948" stroke-width="1" stroke-dasharray="2 8" opacity=".6"/>
+<g fill="url(#gdc)" font-family="Outfit, Arial, sans-serif" font-weight="800">
+<text font-size="30" letter-spacing="4"><textPath href="#tpc" startOffset="50%" text-anchor="middle">COMPANY DU BRA</textPath></text>
+<text font-size="27" letter-spacing="3.5"><textPath href="#bpc" startOffset="50%" text-anchor="middle">IRAQ KURDISTAN</textPath></text>
+</g>
+<g fill="url(#gdc)"><path transform="translate(68,250) scale(1.25)" d="M0,-10 L2.4,-2.4 L10,0 L2.4,2.4 L0,10 L-2.4,2.4 L-10,0 L-2.4,-2.4 Z"/><path transform="translate(432,250) scale(1.25)" d="M0,-10 L2.4,-2.4 L10,0 L2.4,2.4 L0,10 L-2.4,2.4 L-10,0 L-2.4,-2.4 Z"/><path transform="translate(96,200) scale(0.6)" d="M0,-10 L2.4,-2.4 L10,0 L2.4,2.4 L0,10 L-2.4,2.4 L-10,0 L-2.4,-2.4 Z"/><path transform="translate(404,200) scale(0.6)" d="M0,-10 L2.4,-2.4 L10,0 L2.4,2.4 L0,10 L-2.4,2.4 L-10,0 L-2.4,-2.4 Z"/><path transform="translate(96,300) scale(0.6)" d="M0,-10 L2.4,-2.4 L10,0 L2.4,2.4 L0,10 L-2.4,2.4 L-10,0 L-2.4,-2.4 Z"/><path transform="translate(404,300) scale(0.6)" d="M0,-10 L2.4,-2.4 L10,0 L2.4,2.4 L0,10 L-2.4,2.4 L-10,0 L-2.4,-2.4 Z"/></g>
+<g fill="url(#gdc)" filter="url(#glc)" transform="translate(196,132) scale(0.55)"><path d="M117.678,102.053 c-2.037,-16.906 11.458,-25.26 12.016,-25.618 c-6.55,-9.578 -16.745,-10.876 -20.316,-11.168 c-8.65,-0.902 -16.924,5.088 -21.309,5.088 c-4.404,0 -11.237,-4.96 -18.455,-4.832 c-9.489,0.178 -18.232,5.516 -23.102,14.004 c-9.873,17.135 -2.529,42.455 7.021,56.328 c4.814,6.974 10.556,14.777 18.093,14.492 c7.284,-0.292 10.038,-4.707 18.847,-4.707 c8.775,0 11.432,4.707 19.204,4.553 c7.872,-0.254 13.01,-7.433 17.794,-14.429 c5.636,-8.188 7.954,-16.108 8.083,-16.517 C118.411,103.58 117.678,102.053 117.678,102.053 Z"/><path d="M102.404,36.568 c4.116,-4.996 6.879,-11.944 6.126,-18.868 c-5.922,0.241 -13.084,3.948 -17.332,8.944 c-3.805,4.444 -7.139,11.536 -6.079,18.368 C91.076,45.344 98.118,41.42 102.404,36.568 Z"/></g>
+<text x="250" y="322" fill="url(#gdc)" font-family="Outfit, Arial, sans-serif" font-weight="900" font-size="74" text-anchor="middle" letter-spacing="2" filter="url(#glc)">DB</text>
+</svg></div>
+      <i class="spark s1"></i><i class="spark s2"></i><i class="spark s3"></i><i class="spark s4"></i>
+    </div>
+    <h1>Company Du Bra</h1>
+    <div class="sub-title">IRAQ KURDISTAN</div>
+    <div class="apple-id-tag">Apple ID Store</div>
+    <div class="hero-foot">
+      <span class="stamp" id="time"></span>
+    </div>
+  </section>
+
+  <section class="sheet">
+    <div class="sheet-h"><b data-t="title">زانیاری کارت</b><span>CARD INFO</span></div>
+    <div id="box"></div>
+  </section>
+
+  <div id="supportContainer"></div>
+
+  <footer class="foot">
+    <span>© <b>Company Du Bra · دوو برا</b></span>
+    <span data-t="thanks">سوپاس بۆ متمانەکەت</span>
+  </footer>
+</div>
+<canvas id="fx" aria-hidden="true"></canvas>
+
+<script>
+const SUPABASE_API = 'https://foplvmfppbngywmxmqof.supabase.co/rest/v1/rpc/scan';
+const REPORT_API = 'https://foplvmfppbngywmxmqof.supabase.co/rest/v1/rpc/report_qr';
+const OTP_API = 'https://foplvmfppbngywmxmqof.supabase.co/functions/v1/otp';
+const KEY = 'sb_publishable_HFxscwwTWxXEspJEnpJgFA_Ib4A5cAQ';
+const DEMO = false; // تەنها بۆ پیشاندان
+
+const T = {
+  ku: { dir:'rtl', code:'KU', title:'زانیاری کارت', checking:'پشکنین…',
+        email:'Email', password:'Password', otpTitle:'کۆدی دڵنیایی (OTP)', otpWait:'بۆ بینینی کۆد، دوگمەی نوێکردنەوە دابگرە...', otpNone:'کۆد هێشتا نەگەیشتووە، چەند چرکەیەکی تر دووبارە نوێی بکەرەوە.', otpSearch:'چاوەڕێی کۆد دەکەین...', guideTitle:'چۆن داخلی بکەم؟', g1t:'App Store بکەرەوە', g1d:'تەنها لە App Store، نەک لە Settings.', g2t:'وێنەی پرۆفایل دابگرە', g2d:'لە سەرەوەی App Store، وێنەی پرۆفایلەکە دابگرە.', g3t:'ئیمەیڵ و پاسۆرد بنووسە', g3d:'پاشان کۆدی OTP لەم پەڕەیە وەربگرە و بینووسە.', partA:'داخلبوون لە App Store', partB:'گۆڕین بۆ ژمارەی خۆت', g4t:'بچۆ account.apple.com', g4d:'لە Safari بیکەرەوە و هەمان ئیمەیڵ و پاسۆرد و کۆدی OTP بنووسە.', g5t:'Sign-In and Security', g5d:'ئەم بەشە بکەرەوە، پاشان Account Security هەڵبژێرە.', g6t:'ژمارەی خۆت زیاد بکە', g6d:'لە Trusted Phone Numbers ژمارەکەت زیاد بکە و کۆدی SMS بنووسە، پاشان ژمارە کۆنەکە بسڕەوە.',  copy:'کۆپی کردن', copied:'کۆپی کرا ✓',
+        updateBtn:'نوێکردنەوە', invalid:'ئەم QR کۆدە دروست نییە یاخود بەردەست نییە', net:'پەیوەندی نەکرا. ئینتەرنێت بپشکنە.', error:'هەڵە', thanks:'سوپاس بۆ متمانەکەت', modalBtn:'تێگەیشتم، پیشاندانی زانیارییەکان',
+        warningTitle:'⚠️ ئاگادارییەکی گرنگ', warningText:'تکایە بەهیچ شێوەیەک ئەم Apple ID له Settings ی موبایلەکەت داخل مەکە! تەنها لە App Store داخل بکە.<br><br>کاتی داخلکردنی، تکایە ڕاستەوخۆ بیخەرە سەر ژمارەی موبایلی خۆت.',
+        supOpen:'پەیوەندی بە سەپۆرت (Support)', supTitle:'تکایە کێشەکەت دیاری بکە:',
+        opt1:'ئەم Apple ID کار ناکات', opt2:'پاسۆرد یان ئیمەیڵ هەڵەیە', opt3:'پرسیارێکی تری هەیە / کێشەی تر',
+        supWait:'چاوەڕێ بکە...', supDone:'✅ داواکارییەکەت نێردرا بۆ سەپۆرت. بە زوویی چارەسەر دەکرێت.', supAlready:'داواکارییەکەت پێشتر نێردراوە.', supErr:'نەنێردرا، دووبارە هەوڵ بدەرەوە.',
+        customPlaceholder:'پرسیار یان کێشەکەت لێرە بنووسە...' },
+  ar: { dir:'rtl', code:'AR', title:'معلومات البطاقة', checking:'جارٍ التحقق…',
+        email:'Email', password:'Password', otpTitle:'رمز التحقق (OTP)', otpWait:'لإظهار الرمز، اضغط على زر التحديث...', otpNone:'لم يصل الرمز بعد، حدّث مرة أخرى بعد ثوانٍ.', otpSearch:'بانتظار الرمز...', guideTitle:'كيف أسجّل الدخول؟', g1t:'افتح App Store', g1d:'من App Store فقط، وليس من الإعدادات.', g2t:'اضغط على صورة الحساب', g2d:'في أعلى App Store اضغط على صورة الملف الشخصي.', g3t:'أدخل البريد وكلمة المرور', g3d:'ثم خذ رمز OTP من هذه الصفحة وأدخله.', partA:'الدخول إلى App Store', partB:'التحويل إلى رقمك', g4t:'افتح account.apple.com', g4d:'من Safari أدخل نفس البريد وكلمة المرور ورمز OTP.', g5t:'Sign-In and Security', g5d:'افتح هذا القسم ثم اختر Account Security.', g6t:'أضف رقمك', g6d:'في Trusted Phone Numbers أضف رقمك وأدخل رمز SMS، ثم احذف الرقم القديم.',  copy:'نسخ', copied:'تم النسخ ✓',
+        updateBtn:'تحديث', invalid:'رمز QR هذا غير صالح أو غير موجود', net:'تعذّر الاتصال. تحقّق من الإنترنت.', error:'خطأ', thanks:'شكراً لثقَتِك', modalBtn:'فهمت، عرض المعلومات',
+        warningTitle:'⚠️ تنبيه مهم', warningText:'يرجى عدم إدخال Apple ID هذا في إعدادات الهاتف (Settings) نهائياً! قم بإدخاله في App Store فقط.<br><br>عند الإدخال، يرجى وضعه مباشرة على رقم هاتفك.',
+        supOpen:'الاتصال بالدعم (Support)', supTitle:'يرجى تحديد مشكلتك:',
+        opt1:'هذا Apple ID لا يعمل', opt2:'كلمة المرور أو البريد خطأ', opt3:'دي سؤال آخر / مشكلة أخرى',
+        supWait:'جاري الانتظار...', supDone:'✅ تم إرسال طلبك إلى الدعم. سيتم الحل قريباً.', supAlready:'تم إرسال طلبك مسبقاً.', supErr:'فشل الإرسال، حاول مجدداً.',
+        customPlaceholder:'اكتب سؤالك أو مشكلتك هنا...' },
+  en: { dir:'ltr', code:'EN', title:'Card details', checking:'Verifying…',
+        email:'Email', password:'Password', otpTitle:'Verification Code (OTP)', otpWait:'To see the code, click the update button...', otpNone:'No code yet — refresh again in a few seconds.', otpSearch:'Waiting for the code...', guideTitle:'How to sign in', g1t:'Open the App Store', g1d:'App Store only — not Settings.', g2t:'Tap your profile picture', g2d:'At the top of the App Store, tap the profile icon.', g3t:'Enter email & password', g3d:'Then get the OTP code from this page and type it in.', partA:'Sign in to App Store', partB:'Switch to your number', g4t:'Go to account.apple.com', g4d:'Open it in Safari and sign in with the same email, password and OTP code.', g5t:'Sign-In and Security', g5d:'Open this section, then choose Account Security.', g6t:'Add your own number', g6d:'Under Trusted Phone Numbers, add your number and enter the SMS code, then delete the old number.',  copy:'Copy', copied:'Copied ✓',
+        updateBtn:'Refresh', invalid:'This QR code is not valid or available', net:'Couldn’t connect. Check your internet.', error:'Error', thanks:'Thank you for your trust', modalBtn:'Got it, show details',
+        warningTitle:'⚠ Important Warning', warningText:'Please do NOT sign in with this Apple ID in your phone Settings! Sign in via App Store only.<br><br>When signing in, please use your own mobile phone number directly.',
+        supOpen:'Contact Support', supTitle:'Please select your issue:',
+        opt1:'This Apple ID does not work', opt2:'Password or Email is incorrect', opt3:'I have another question / issue',
+        supWait:'Please wait...', supDone:'✅ Request sent to support. It will be resolved soon.', supAlready:'Your request was already submitted.', supErr:'Failed to send, try again.',
+        customPlaceholder:'Write your question or issue here...' }
+};
+
+const store = { get(k){ try { return localStorage.getItem(k); } catch(e){ return null; } }, set(k, v){ try { localStorage.setItem(k, v); } catch(e){} } };
+
+let lang = DEMO ? null : (store.get('dubra_lang') || null);
+let state = { kind: 'loading' };
+let lastDetectedOtp = '';
+
+function playNotificationSound() {
+  try {
+    const AudioContext = window.AudioContext || window.webkitAudioContext;
+    if (!AudioContext) return;
+    const ctx = new AudioContext();
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    osc.type = 'sine';
+    osc.frequency.setValueAtTime(587.33, ctx.currentTime);
+    osc.frequency.setValueAtTime(880, ctx.currentTime + 0.1);
+    gain.gain.setValueAtTime(0.15, ctx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.4);
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+    osc.start();
+    osc.stop(ctx.currentTime + 0.4);
+  } catch(e) {}
+}
+
+const urlParams = new URLSearchParams(location.search);
+let code = (urlParams.get('c') || '').trim().toUpperCase();
+
+if (code) {
+  store.set('dubra_active_code', code);
+} else {
+  code = store.get('dubra_active_code') || (DEMO ? 'DEMO1' : '');
+}
+
+const box = document.getElementById('box');
+const supportContainer = document.getElementById('supportContainer');
+const langSelectModal = document.getElementById('langSelectModal');
+const warningModal = document.getElementById('warningModal');
+const closeModalBtn = document.getElementById('closeModalBtn');
+
+function selectInitialLang(selectedLang) {
+  lang = selectedLang;
+  store.set('dubra_lang', lang);
+  langSelectModal.style.display = 'none';
+  updateTexts();
+  warningModal.style.display = 'grid';
+}
+
+if (lang) {
+  langSelectModal.style.display = 'none';
+  warningModal.style.display = 'grid';
+  updateTexts();
+}
+
+closeModalBtn.onclick = () => {
+  warningModal.style.display = 'none';
+  loadData();
+};
+
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const fmt = v => (typeof v === 'string' && /^\d{4}-\d{2}-\d{2}T/.test(v)) ? v.slice(0, 10) : v;
+
+const ICO_MAIL = '<span class="c-ico mail"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>';
+const ICO_KEY = '<span class="c-ico key"><svg viewBox="0 0 24 24"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M17 6l3 3"/></svg></span>';
+
+function updateTexts() {
+  const t = T[lang || 'ku'];
+  document.documentElement.lang = lang === 'ku' ? 'ckb' : (lang || 'ku');
+  document.documentElement.dir = t.dir;
+  document.getElementById('langCode').textContent = t.code;
+  closeModalBtn.textContent = t.modalBtn;
+  document.getElementById('modalTitleText').textContent = t.warningTitle;
+  document.getElementById('modalDescText').innerHTML = t.warningText;
+  document.querySelectorAll('[data-t]').forEach(el => el.textContent = t[el.dataset.t]);
+  document.querySelectorAll('[data-lang]').forEach(b => b.setAttribute('aria-checked', String(b.dataset.lang === lang)));
+}
+
+function render(){
+  const t = T[lang || 'ku'];
+  updateTexts();
+
+  if (state.kind === 'loading') {
+    box.innerHTML = '<div class="skel"><div></div><div></div></div>';
+    supportContainer.innerHTML = '';
+    return;
+  }
+  if (state.kind === 'error') {
+    box.innerHTML = '<div class="err">' + t[state.msg] + '</div>';
+    supportContainer.innerHTML = '';
+    return;
+  }
+
+  const d = state.data;
+
+  const values = d.data || [];
+
+  let emailVal = '';
+  let passVal = '';
+  let otpLink = '';
+  let extra3Val = '';
+  let extra4Val = '';
+
+  for (let i = 0; i < values.length; i++) {
+    const val = values[i];
+    if (val === null || String(val).trim() === '') continue;
+    const strVal = String(val).trim();
+
+    if (strVal.startsWith('http://') || strVal.startsWith('https://')) {
+      otpLink = strVal;
+      continue;
+    }
+
+    if (!emailVal) emailVal = strVal;
+    else if (!passVal) passVal = strVal;
+    else if (!extra3Val) extra3Val = strVal;
+    else if (!extra4Val) extra4Val = strVal;
+  }
+
+  let html = '<div class="credentials-container">';
+
+  if (emailVal) {
+    html += `
+      <div class="credential-card">
+        ${ICO_MAIL}
+        <div class="credential-info">
+          <div class="credential-label">${t.email}</div>
+          <div class="credential-value">${esc(fmt(emailVal))}</div>
+        </div>
+        <button class="copy" type="button" data-v="${esc(fmt(emailVal))}">${t.copy}</button>
+      </div>
+    `;
+  }
+
+  if (passVal) {
+    html += `
+      <div class="credential-card">
+        ${ICO_KEY}
+        <div class="credential-info">
+          <div class="credential-label">${t.password}</div>
+          <div class="credential-value">${esc(fmt(passVal))}</div>
+        </div>
+        <button class="copy" type="button" data-v="${esc(fmt(passVal))}">${t.copy}</button>
+      </div>
+    `;
+  }
+
+  html += '</div>';
+
+  if (otpLink) {
+    html += `
+      <div class="otp-box" data-otp-url="${esc(otpLink)}">
+        <div class="otp-header">
+          <div class="otp-title">
+            <svg style="width:16px;height:16px" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4v-3.586l6.414-6.414A6 6 0 0121 9z"/></svg>
+            <span>${t.otpTitle}</span>
+          </div>
+          <div class="otp-actions">
+            <span class="otp-timer" id="otpTimer" hidden><svg viewBox="0 0 36 36"><circle class="bgc" cx="18" cy="18" r="15"/><circle class="pc" cx="18" cy="18" r="15"/></svg><b>90</b></span>
+            <button class="update-btn" id="updateOtpBtn" type="button" title="Refresh">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+              <span>${t.updateBtn}</span>
+            </button>
+          </div>
+        </div>
+        <div class="otp-row" id="otpRow">
+          <div class="otp-empty">${t.otpWait}</div>
+        </div>
+      </div>
+    `;
+  }
+
+  if (extra3Val || extra4Val) {
+    html += `
+      <div class="extra-box">
+        <div class="extra-title">زانیاری زیاتری کارت (Extra Info)</div>
+        <div class="extra-grid">
+    `;
+    if (extra3Val) {
+      html += `
+          <div class="extra-item">
+            <div class="extra-label">Info 3</div>
+            <div class="extra-val">${esc(fmt(extra3Val))}</div>
+          </div>
+      `;
+    }
+    if (extra4Val) {
+      html += `
+          <div class="extra-item">
+            <div class="extra-label">Info 4</div>
+            <div class="extra-val">${esc(fmt(extra4Val))}</div>
+          </div>
+      `;
+    }
+    html += `
+        </div>
+      </div>
+    `;
+  }
+
+  box.innerHTML = html;
+  celebrate();
+
+  if (otpLink) {
+    const updateBtnEl = document.getElementById('updateOtpBtn');
+    if (updateBtnEl) {
+      updateBtnEl.onclick = () => {
+        updateBtnEl.classList.add('spinning');
+        startOtpPoll(otpLink);
+        setTimeout(() => updateBtnEl.classList.remove('spinning'), 600);
+      };
+    }
+  }
+
+  supportContainer.innerHTML = guideHTML(t) + `
+    <div class="support-section" id="supportBox">
+      <button type="button" id="supportToggleBtn" class="support-btn-main">
+        <svg style="width:18px;height:18px" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636l3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+        <span>${t.supOpen}</span>
+      </button>
+      <div id="supportOptionsList" class="support-options" style="display:none">
+        <div style="font-size:0.82rem;font-weight:700;color:var(--muted);text-align:center">${t.supTitle}</div>
+        <button type="button" class="support-option-btn" data-sup-opt="1">
+          <span>${t.opt1}</span>
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+        </button>
+        <button type="button" class="support-option-btn" data-sup-opt="2">
+          <span>${t.opt2}</span>
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+        </button>
+        <button type="button" class="support-option-btn" data-sup-opt="3" id="opt3Btn">
+          <span>${t.opt3}</span>
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+        </button>
+        <div id="supportCustomBox" class="support-custom-box" style="display:none">
+          <textarea id="supportCustomInput" class="support-textarea" placeholder="${t.customPlaceholder}"></textarea>
+          <button type="button" id="supportSendCustomBtn" class="support-send-btn">ناردنی پرسیار</button>
+        </div>
+      </div>
+      <p id="supportMsg" class="support-msg" style="display:none"></p>
+    </div>
+  `;
+  initGuide();
+
+  box.querySelectorAll('.copy[data-v]').forEach(b => b.onclick = () => {
+    const done = () => { b.textContent = t.copied; b.classList.add('done'); setTimeout(() => { b.textContent = t.copy; b.classList.remove('done'); }, 1600); };
+    if (navigator.clipboard) navigator.clipboard.writeText(b.dataset.v).then(done).catch(() => {});
+  });
+}
+
+let demoTicks = 0, pollTimer = null, pollClock = null, pollUntil = 0;
+const POLL_MS = 90000;
+function startOtpPoll(url){
+  clearTimeout(pollTimer); clearInterval(pollClock);
+  pollUntil = Date.now() + POLL_MS;
+  const tm = document.getElementById('otpTimer');
+  const paint = () => { if (!tm) return; const left = Math.max(0, Math.ceil((pollUntil - Date.now()) / 1000));
+    tm.hidden = left <= 0; tm.style.setProperty('--p', left / (POLL_MS / 1000)); tm.querySelector('b').textContent = left; if (left <= 0) clearInterval(pollClock); };
+  paint(); pollClock = setInterval(paint, 1000);
+  const loop = async () => {
+    if (!document.getElementById('otpRow')) return;
+    const c = await fetchOtp(url, true);
+    if (Date.now() < pollUntil) pollTimer = setTimeout(loop, 4000);
+    else if (!c) { const row = document.getElementById('otpRow'); if (row && !row.querySelector('.otp-digits')) row.innerHTML = `<div class="otp-empty">${T[lang || 'ku'].otpNone}</div>`; }
+  };
+  loop();
+}
+
+const PHONES = {
+  1: '<div class="scr"><div class="apps"><i></i><i></i><i></i><i></i><i class="as"></i><i></i><i></i><i></i><i></i></div></div><span class="tap" style="left:35px;top:62px"></span>',
+  2: '<div class="scr"><div class="as-top"><b>Today</b><span class="av"></span></div><div class="as-card"></div><div class="as-card c2"></div><div class="as-card c3"></div></div><span class="tap" style="right:5px;top:15px"></span>',
+  3: '<div class="scr"><span class="ap"></span><span class="ttl">Apple Account</span><div class="inp"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="inp i2"><i></i><i></i><i></i><i></i></div><div class="sbtn"></div></div><span class="tap" style="left:35px;top:118px;animation-delay:1.8s"></span>',
+  4: '<div class="scr web"><div class="url">account.apple.com</div><span class="ap"></span><div class="inp"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="inp i2"><i></i><i></i><i></i><i></i></div><div class="sbtn"></div></div><span class="tap" style="left:35px;top:122px;animation-delay:1.8s"></span>',
+  5: '<div class="scr web"><div class="url">account.apple.com</div><div class="mrow"></div><div class="mrow hl">Sign-In and Security</div><div class="mrow"></div><div class="mrow sub">Account Security</div><div class="mrow"></div></div><span class="tap" style="left:35px;top:52px"></span>',
+  6: '<div class="scr web"><div class="url">Trusted Numbers</div><div class="num old"><i>−</i>+964 ••• 08</div><div class="num new"><i>+</i>+964 750 •••</div><div class="sms"><b></b><b></b><b></b><b></b><b></b><b></b></div></div><span class="tap" style="left:35px;top:66px"></span>'
+};
+function guideHTML(t){
+  const steps = [1,2,3];
+  return `<section class="guide"><div class="guide-h"><b>${t.guideTitle}</b><span>3 STEPS</span></div>
+    <div class="g-track" id="gTrack">${steps.map(n => `<article class="g-card"><div class="phone p${n}">${PHONES[n]}</div>
+      <div class="g-txt"><em>${n}</em><b>${t['g'+n+'t']}</b><p>${t['g'+n+'d']}</p></div></article>`).join('')}</div>
+    <div class="g-dots" id="gDots">${steps.map((n, i) => `<i class="${i ? '' : 'on'}${n > 3 ? ' b' : ''}"></i>`).join('')}</div></section>`;
+}
+function initGuide(){
+  const tr = document.getElementById('gTrack'), dots = document.querySelectorAll('#gDots i');
+  if (!tr) return;
+  tr.addEventListener('scroll', () => { const i = Math.round(Math.abs(tr.scrollLeft) / tr.clientWidth); dots.forEach((d, k) => d.classList.toggle('on', k === i)); }, { passive: true });
+}
+async function fetchOtp(url, isManual = false) {
+  const row = document.getElementById('otpRow');
+  if (!row) return;
+  const t = T[lang || 'ku'];
+  try {
+    let codeVal = '';
+    if (DEMO) {
+      demoTicks++;
+      codeVal = demoTicks < 3 ? '' : (lastDetectedOtp || String(Math.floor(100000 + Math.random() * 900000)));
+    } else {
+      // ١) سێرڤەر لینکەکە دەخوێنێتەوە (هەموو جۆرە لینکێک، تەنانەت http)
+      try {
+        const r = await fetch(OTP_API, { method: 'POST', cache: 'no-store',
+          headers: { 'Content-Type': 'application/json', apikey: KEY },
+          body: JSON.stringify({ code }) }).then(res => res.json());
+        if (r && r.ok && r.otp) codeVal = r.otp;
+      } catch(e) {}
+      // ٢) ئەگەر سێرڤەر نەیتوانی، ڕێگای کۆن (ڕاستەوخۆ لە مۆبایلەوە)
+      if (!codeVal) {
+        try {
+          const text = await fetch(url, { cache: 'no-store' }).then(res => res.text());
+          const m = text.match(/\b\d{4,8}\b/);
+          if (m) codeVal = m[0];
+          else {
+            const doc = new DOMParser().parseFromString(text, 'text/html');
+            const m2 = (doc.body ? doc.body.textContent : text).match(/\b\d{4,8}\b/);
+            if (m2) codeVal = m2[0];
+          }
+        } catch(e) {}
+      }
+    }
+
+    if (codeVal) {
+      const isNew = codeVal !== lastDetectedOtp;
+      if (isNew && lastDetectedOtp !== '') playNotificationSound();
+      if (isNew) { try { navigator.vibrate && navigator.vibrate([30, 40, 30]); } catch(e) {} }
+      lastDetectedOtp = codeVal;
+      if (isNew || !row.querySelector('.otp-digits')) {
+        row.innerHTML = `<div class="otp-digits">${codeVal.split('').map((d, i) => `<span style="--i:${i}">${esc(d)}</span>`).join('')}</div>
+          <button class="copy" type="button" data-v="${esc(codeVal)}">${t.copy}</button>`;
+        row.classList.remove('got'); void row.offsetWidth; row.classList.add('got');
+        row.querySelector('.copy').onclick = function() {
+          const b = this;
+          const done = () => { b.textContent = t.copied; b.classList.add('done'); setTimeout(() => { b.textContent = t.copy; b.classList.remove('done'); }, 1600); };
+          if (navigator.clipboard) navigator.clipboard.writeText(b.dataset.v).then(done).catch(() => {});
+        };
+      }
+    } else if (!row.querySelector('.otp-digits')) {
+      row.innerHTML = `<div class="otp-search"><i></i><i></i><i></i><span>${t.otpSearch}</span></div>`;
+    }
+    return codeVal;
+  } catch(e) {}
+}
+
+document.addEventListener('click', async e => {
+  const supportBox = e.target.closest('#supportBox');
+  if (!supportBox) return;
+
+  const toggleBtn = e.target.closest('#supportToggleBtn');
+  const optionsList = document.getElementById('supportOptionsList');
+  if (toggleBtn && optionsList) {
+    optionsList.style.display = optionsList.style.display === 'none' ? 'grid' : 'none';
+    return;
+  }
+
+  const opt3Btn = e.target.closest('#opt3Btn');
+  const customBox = document.getElementById('supportCustomBox');
+  if (opt3Btn && customBox) {
+    customBox.style.display = customBox.style.display === 'none' ? 'grid' : 'none';
+    return;
+  }
+
+  const sendCustomBtn = e.target.closest('#supportSendCustomBtn');
+  if (sendCustomBtn) {
+    const input = document.getElementById('supportCustomInput');
+    const customText = input ? input.value.trim() : '';
+    if (!customText) return;
+    submitSupportReport('پرسیار/کێشەی تر: ' + customText);
+    return;
+  }
+
+  const optBtn = e.target.closest('[data-sup-opt]');
+  if (!optBtn || optBtn.disabled) return;
+
+  const optNum = optBtn.getAttribute('data-sup-opt');
+  if (optNum === '3') return;
+
+  let noteText = 'کێشە: ئەم Apple ID کار ناکات';
+  if (optNum === '2') noteText = 'کێشە: پاسۆرد یان ئیمەیڵ هەڵەیە';
+
+  submitSupportReport(noteText);
+});
+
+async function submitSupportReport(noteText) {
+  const optionsList = document.getElementById('supportOptionsList');
+  const msgEl = document.getElementById('supportMsg');
+
+  if (optionsList) optionsList.style.display = 'none';
+  if (msgEl) {
+    msgEl.style.display = 'block';
+    msgEl.style.color = '';
+    msgEl.textContent = T[lang || 'ku'].supWait;
+  }
+
+  try {
+    const r = DEMO ? { ok: true } : await fetch(REPORT_API, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', apikey: KEY, Authorization: 'Bearer ' + KEY },
+      body: JSON.stringify({ p_code: code, p_note: noteText })
+    }).then(res => res.json());
+
+    if (!r.ok) throw 0;
+    if (msgEl) {
+      msgEl.style.color = 'var(--ok)';
+      msgEl.textContent = r.already ? T[lang || 'ku'].supAlready : T[lang || 'ku'].supDone;
+    }
+  } catch(err) {
+    if (msgEl) {
+      msgEl.style.color = 'var(--bad)';
+      msgEl.textContent = T[lang || 'ku'].supErr;
+    }
+  }
+}
+
+const langBtn = document.getElementById('langBtn'), langMenu = document.getElementById('langMenu');
+function toggleMenu(open){ langMenu.hidden = !open; langBtn.setAttribute('aria-expanded', String(open)); }
+langBtn.onclick = e => { e.stopPropagation(); toggleMenu(langMenu.hidden); };
+
+langMenu.querySelectorAll('[data-lang]').forEach(b => {
+  b.onclick = () => {
+    lang = b.dataset.lang;
+    store.set('dubra_lang', lang);
+    toggleMenu(false);
+    render();
+  };
+});
+
+document.addEventListener('click', () => toggleMenu(false));
+
+function stamp(){
+  const n = new Date(), p = x => String(x).padStart(2, '0');
+  document.getElementById('time').textContent = p(n.getDate()) + '/' + p(n.getMonth() + 1) + '/' + n.getFullYear() + ' · ' + p(n.getHours()) + ':' + p(n.getMinutes());
+}
+
+// خێرایی: داواکاری لە کاتی کردنەوەی پەڕەکەوە دەست پێدەکات، هاوکات لەگەڵ پەنجەرەی زمان و ئاگاداری
+let scanPromise = null;
+function startScan(){
+  if (!scanPromise) scanPromise = fetch(SUPABASE_API, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', apikey: KEY, Authorization: 'Bearer ' + KEY },
+    body: JSON.stringify({ p_code: code }),
+    cache: 'no-store'
+  }).then(r => r.json());
+  return scanPromise;
+}
+if (code && !DEMO) startScan().catch(() => { scanPromise = null; });
+
+function loadData(){
+  if (!code) { state = { kind: 'error', msg: 'invalid' }; render(); return; }
+
+  if (DEMO) {
+    state = { kind: 'loading' }; render();
+    setTimeout(() => {
+      state = { kind: 'ok', data: { ok: true, data: ['apple.id.demo@icloud.com', 'Db#2026x', 'https://otp.example.com', '01/04/2001', 'DB-1305'] } };
+      stamp(); render();
+    }, 1300);
+    return;
+  }
+
+  const cachedData = store.get('dubra_data_' + code);
+  if (cachedData) {
+    try {
+      const parsed = JSON.parse(cachedData);
+      state = { kind: 'ok', data: parsed };
+      render();
+    } catch(e) {}
+  } else {
+    state = { kind: 'loading' }; render();
+  }
+
+  startScan()
+    .then(d => {
+      scanPromise = null;
+      if (!d.ok) {
+        state = { kind: 'error', msg: d.error === 'empty' ? 'invalid' : 'invalid' };
+      } else {
+        d.code = code;
+        store.set('dubra_data_' + code, JSON.stringify(d));
+        state = { kind: 'ok', data: d };
+        stamp();
+      }
+      render();
+    })
+    .catch(() => {
+      scanPromise = null;
+      if (!cachedData) {
+        state = { kind: 'error', msg: 'net' };
+        render();
+      }
+    });
+}
+
+/* ===== جوانکاری: ئەستێرە و کۆنفێتی ===== */
+const REDUCE = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+(function(){
+  const cv = document.getElementById('stars'), ctx = cv.getContext('2d'), dpr = Math.min(devicePixelRatio || 1, 2); let S = [];
+  function size(){ cv.width = innerWidth * dpr; cv.height = innerHeight * dpr; S = []; for (let i = 0; i < 70; i++) S.push({ x: Math.random() * cv.width, y: Math.random() * cv.height, r: (Math.random() * 1.3 + .3) * dpr, p: Math.random() * 6 }); }
+  size(); addEventListener('resize', size);
+  (function f(t){ ctx.clearRect(0, 0, cv.width, cv.height); S.forEach(s => { ctx.globalAlpha = .25 + .45 * (.5 + .5 * Math.sin(t / 900 + s.p)); ctx.fillStyle = '#fff'; ctx.beginPath(); ctx.arc(s.x, s.y, s.r, 0, 7); ctx.fill(); }); if (!REDUCE) requestAnimationFrame(f); })(0);
+})();
+let celebrated = false;
+function celebrate(){
+  if (celebrated || REDUCE) return; celebrated = true;
+  const cv = document.getElementById('fx'), ctx = cv.getContext('2d'), dpr = Math.min(devicePixelRatio || 1, 2), W = cv.width = innerWidth * dpr, H = cv.height = innerHeight * dpr;
+  const cols = ['#f7c948', '#ffe7a3', '#5b93ff', '#22d3ee', '#8b5cf6', '#ffffff'], P = [];
+  const r = document.querySelector('.hero .logo-box').getBoundingClientRect(), ox = (r.left + r.width / 2) * dpr, oy = (r.top + r.height / 2) * dpr;
+  for (let i = 0; i < 110; i++) { const a = Math.random() * Math.PI * 2, s = (4 + Math.random() * 9) * dpr;
+    P.push({ x: ox, y: oy, vx: Math.cos(a) * s, vy: Math.sin(a) * s - 5 * dpr, w: (3 + Math.random() * 4) * dpr, h: (6 + Math.random() * 6) * dpr, rot: Math.random() * 6, vr: (Math.random() - .5) * .4, c: cols[i % cols.length], l: 1 }); }
+  (function step(){ ctx.clearRect(0, 0, W, H); let alive = false;
+    P.forEach(p => { p.vy += .28 * dpr; p.vx *= .985; p.x += p.vx; p.y += p.vy; p.rot += p.vr; p.l -= .011;
+      if (p.l > 0 && p.y < H + 40) { alive = true; ctx.save(); ctx.globalAlpha = Math.max(p.l, 0); ctx.translate(p.x, p.y); ctx.rotate(p.rot); ctx.fillStyle = p.c; ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h * Math.abs(Math.cos(p.rot * 2))); ctx.restore(); } });
+    if (alive) requestAnimationFrame(step); else ctx.clearRect(0, 0, W, H); })();
+}
+
+if (!DEMO) history.replaceState(null, '', location.pathname);
+
+if (lang) {
+  loadData();
+}
+</script>
+<!--BODY-END-->
+</body>
+</html>
